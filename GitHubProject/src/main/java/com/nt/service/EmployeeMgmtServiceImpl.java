@@ -14,14 +14,14 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 	
 	@Override
 	public String registerEmployee(Employee emp) {
-		
-		return null;
+		int idVal=empRepo.save(emp).getEmpNo();
+		return "Employee is aved with id value :: "+idVal;
 	}
 
 	@Override
 	public String employeeById(int id) {
-		
-		return null;
+		empRepo.deleteById(id);
+		return "Employee is deleted";
 	}
 
 }
